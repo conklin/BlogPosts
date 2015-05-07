@@ -96,8 +96,36 @@ What do you think of this
     
 __Bob__
 
-Its huge! So much extra boiler plate.
+I like your code, but I don't see how its more clear. For one, its much bigger now.  I can't even read it all without scrolling. Also, your `validateNAS` function is confusing. In a code review I would change a few things... and __add comments__.
 
+    static boolean validateNAS(String Nas){
+        def total = 0;
+
+        //sum odd number
+        getOddBytesIntValue(Nas.getBytes()).each {
+            total += it //digital root not require, a single digit digital root is itself
+        }
+
+        //sum digital root of even number * 2
+        getEvenBytesIntValue(Nas.getBytes()).each {
+            total += getDigitalRoot(it * 2)
+        }
+
+        return total%10 == 0 //should be divisible by 10
+    }
+
+__Zach__
+
+Ok, I see your point. But I can fix it!
+
+Very good feedback on clarity issues (and the bug catch). This is why code reviews (and pair programming) are good. Does this version read a bit better to you?
+
+    static boolean validateNAS(String Nas){
+        def nasBytes = Nas.getBytes()
+        int checksum = getBytesAtOddIndexes(nasBytes).sum { intValue(it) }
+        checksum += getBytesAtEvenIndex(nasBytes).sum{  digitalRoot(intValue(it) * 2) }
+        return checksum % 10 == 0;
+    }
     
 
 
