@@ -53,7 +53,6 @@ Yikes! Even with comments thats tuff.
 
 What do you think of this
 
-    // see http://en.wikipedia.org/wiki/Social_Insurance_Number#Validation
     static boolean validateNAS(String Nas){
         def total = 0;
         def nasBytes = Nas.getBytes()
@@ -88,7 +87,6 @@ What do you think of this
         return (i%2) ? true : false;
     }
 
-    // en.wikipedia.org/wiki/Digital_root
     static int getDigitalRoot(int n) {
         return n%10 + ((int)(n/10))
     }
@@ -127,6 +125,15 @@ Very good feedback on clarity issues (and the bug catch). This is why code revie
         return checksum % 10 == 0;
     }
     
+__Bob__
+
+Ok. I get were your comming from. This reads very well and doesn't need comments! Lets look at this one more time as a whole.
+
+> Code Dump
+
+
+ 
+
 
 
 
