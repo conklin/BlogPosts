@@ -141,7 +141,7 @@ Ok. I get were your comming from. This reads very well and doesn't need comments
 
 adapted from http://www.reddit.com/r/ProgrammerHumor/comments/316aax/theres_always_that_one_guy_in_your_team/cpyv806
 
-Edided by Mark and Zach. 
+Compiled by Mark and Zach. 
   
 
 
